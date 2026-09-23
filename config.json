@@ -1,11 +1,11 @@
 {
-    "spider": "http://oss4liview.moji.com/thd_file/2026/09/12/7674fec9301d0f7816450c5887f7c57a.jpg;md5;1fb3e6dd311c1203c034963e0cf4e1be",
+    "spider": "http://oss4liview.moji.com/thd_file/2026/09/23/c36421342f706a4f3ec7dd2c2684e63b.jpg;md5;4fcff3209276d2776d3f320474751453",
     "wallpaper": "https://www.loliapi.com/acg/pe/",
-    "logo": "https://github.com/ApolloRioo/tubiao/blob/main/3d/180.png",
+    "logo": "https://raw.githubusercontent.com/udith77-cyber/TVBOX/refs/heads/main/IMG-TVBOX.jpg",
     "sites": [
         {
             "key": "Douban",
-            "name": "🔥Aries-Jake🔥",
+            "name": "🔥Aries-Jakr🔥",
             "type": 3,
             "api": "csp_NewDouBanGuard",
             "indexs": 1,
@@ -39,8 +39,17 @@
             }
         },
         {
+            "key": "花卷",
+            "name": "🔥花卷┃4K‍🔥",
+            "type": 3,
+            "api": "csp_AiNewHuaJuanGuard",
+            "searchable": 1,
+            "quickSearch": 1,
+            "changeable": 0
+        },
+        {
             "key": "玩偶",
-            "name": "🔥玩偶┃4K🔥",
+            "name": "🔥‍玩偶┃4K‍🔥",
             "type": 3,
             "api": "csp_AiNewWoggGuard",
             "searchable": 1,
@@ -49,7 +58,7 @@
         },
         {
             "key": "AiNewGuanYing",
-            "name": "🔥观影┃4K🔥",
+            "name": "🔥‍观影┃4K‍🔥",
             "type": 3,
             "api": "csp_AiNewGuanYingGuard",
             "searchable": 1,
@@ -58,7 +67,7 @@
         },
         {
             "key": "AiQwMkv",
-            "name": "🔥七味┃4K🔥",
+            "name": "🔥‍七味┃4K‍🔥",
             "type": 3,
             "api": "csp_AiQwMkvGuard",
             "searchable": 1,
@@ -121,7 +130,7 @@
         },
         {
             "key": "原盘",
-            "name": "🔥原盘┃4K🔥",
+            "name": "🔥‍原盘┃4K‍🔥",
             "type": 3,
             "api": "csp_AiNewZhiNan4KGuard",
             "searchable": 1,
@@ -130,7 +139,7 @@
         },
         {
             "key": "蜗牛",
-            "name": "🔥蜗牛┃4K🔥",
+            "name": "🔥‍蜗牛┃4K‍🔥",
             "type": 3,
             "api": "csp_AiNewWoNiu4KGuard",
             "searchable": 1,
@@ -727,7 +736,7 @@
         },
         {
             "key": "FakeAi115Share",
-            "name": "🔥115┃分享🔥",
+            "name": "🔥115┃分享‍🔥",
             "type": 3,
             "api": "csp_FakeAi115ShareGuard",
             "searchable": 1,
@@ -760,7 +769,7 @@
         },
         {
             "key": "AList",
-            "name": "🔥Alist┃DIY🔥",
+            "name": "🔥️Alist┃DIY️🔥",
             "type": 3,
             "api": "csp_AListGuard",
             "searchable": 1,
@@ -768,7 +777,7 @@
         },
         {
             "key": "webdav",
-            "name": "🔥WebDav┃DIY🔥",
+            "name": "🔥️WebDav┃DIY️🔥",
             "type": 3,
             "api": "csp_WebDAVGuard",
             "searchable": 1,
@@ -776,7 +785,7 @@
         },
         {
             "key": "DiyVod",
-            "name": "🔥Vod┃DIY🔥",
+            "name": "🔥Vod┃DIY️🔥",
             "type": 3,
             "api": "csp_DiyVodGuard",
             "searchable": 1,
@@ -796,7 +805,7 @@
         },
         {
             "key": "bilibili",
-            "name": "🔥 哔哩┃合集🔥",
+            "name": "🔥 ‍哔哩┃合集‍🔥",
             "type": 3,
             "api": "csp_BiliGuard",
             "searchable": 1,
@@ -813,7 +822,7 @@
         },
         {
             "key": "bilixiqu",
-            "name": "🔥 哔哩┃戏曲🔥",
+            "name": "🔥 ‍哔哩┃戏曲‍🔥",
             "type": 3,
             "api": "csp_BiliGuard",
             "searchable": 1,
@@ -830,7 +839,7 @@
         },
         {
             "key": "biliych",
-            "name": "🔥 哔哩┃歌曲🔥",
+            "name": "🔥 ‍哔哩┃歌曲‍🔥",
             "type": 3,
             "api": "csp_BiliGuard",
             "searchable": 1,
@@ -982,6 +991,16 @@
     ],
     "doh": [
         {
+            "name": "🔥Google🔥",
+            "url": "https://dns.google/dns-query",
+            "ips": [
+                "8.8.4.4",
+                "8.8.8.8",
+                "2001:4860:4860::8844",
+                "2001:4860:4860::8888"
+            ]
+        },
+        {
             "name": "🔥Cloudflare🔥",
             "url": "https://cloudflare-dns.com/dns-query",
             "ips": [
@@ -992,13 +1011,23 @@
             ]
         },
         {
-            "name": "🔥Google🔥",
-            "url": "https://dns.google/dns-query",
+            "name": "🔥AdGuard🔥",
+            "url": "https://dns.adguard-dns.com/dns-query",
             "ips": [
-                "8.8.8.8",
-                "8.8.4.4",
-                "2001:4860:4860::8888",
-                "2001:4860:4860::8844"
+                "94.140.14.140",
+                "94.140.14.141",
+                "2a10:50c0::ad1:ff",
+                "2a10:50c0::ad2:ff"
+            ]
+        },
+        {
+            "name": "🔥DNSWatch🔥",
+            "url": "https://resolver2.dns.watch/dns-query",
+            "ips": [
+                "84.200.69.80",
+                "84.200.70.40",
+                "2001:1608:10:25::1c04:b12f",
+                "2001:1608:10:25::9249:d69b"
             ]
         },
         {
@@ -1009,56 +1038,6 @@
                 "149.112.112.112",
                 "2620:fe::fe",
                 "2620:fe::9"
-            ]
-        },
-        {
-            "name": "🔥AdGuard🔥",
-            "url": "https://dns.adguard-dns.com/dns-query",
-            "ips": [
-                "94.140.14.14",
-                "94.140.15.15",
-                "2a10:50c0::ad1:ff",
-                "2a10:50c0::ad2:ff"
-            ]
-        },
-        {
-            "name": "🔥AliDNS🔥",
-            "url": "https://dns.alidns.com/dns-query",
-            "ips": [
-                "223.5.5.5",
-                "223.6.6.6",
-                "2400:3200::1",
-                "2400:3200:baba::1"
-            ]
-        },
-        {
-            "name": "🔥DNSPod🔥",
-            "url": "https://doh.pub/dns-query",
-            "ips": [
-                "119.29.29.29",
-                "119.28.28.28",
-                "2402:4e00::",
-                "2402:4e00:1::"
-            ]
-        },
-        {
-            "name": "🔥360DNS🔥",
-            "url": "https://doh.360.cn/dns-query",
-            "ips": [
-                "101.226.4.6",
-                "218.30.118.6",
-                "123.125.81.6",
-                "140.207.198.6"
-            ]
-        },
-        {
-            "name": "🔥Mullvad🔥",
-            "url": "https://dns.mullvad.net/dns-query",
-            "ips": [
-                "194.242.2.2",
-                "194.242.2.3",
-                "2a07:e340::2",
-                "2a07:e340::3"
             ]
         }
     ],
@@ -1187,7 +1166,7 @@
         {
             "host": "hlsztemgsplive.miguvideo.com",
             "header": {
-                "User-Agent": "bingcha/1.1 (mianfeifenxiang) "
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
             }
         }
     ]
