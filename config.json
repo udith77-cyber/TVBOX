@@ -5,7 +5,7 @@
     "sites": [
         {
             "key": "Douban",
-            "name": "🔥【免费分享】🔥",
+            "name": "🔥Aries-Jake🔥",
             "type": 3,
             "api": "csp_NewDouBanGuard",
             "indexs": 1,
@@ -40,7 +40,7 @@
         },
         {
             "key": "花卷",
-            "name": "🔥花卷┃4K‍🔥",
+            "name": "🔥花卷┃4K🔥",
             "type": 3,
             "api": "csp_AiNewHuaJuanGuard",
             "searchable": 1,
@@ -49,7 +49,7 @@
         },
         {
             "key": "玩偶",
-            "name": "🔥‍玩偶┃4K‍🔥",
+            "name": "🔥玩偶┃4K🔥",
             "type": 3,
             "api": "csp_AiNewWoggGuard",
             "searchable": 1,
@@ -58,7 +58,7 @@
         },
         {
             "key": "AiNewGuanYing",
-            "name": "🔥‍观影┃4K‍🔥",
+            "name": "🔥观影┃4K🔥",
             "type": 3,
             "api": "csp_AiNewGuanYingGuard",
             "searchable": 1,
@@ -67,7 +67,7 @@
         },
         {
             "key": "AiQwMkv",
-            "name": "🔥‍七味┃4K‍🔥",
+            "name": "🔥七味┃4K🔥",
             "type": 3,
             "api": "csp_AiQwMkvGuard",
             "searchable": 1,
@@ -130,7 +130,7 @@
         },
         {
             "key": "原盘",
-            "name": "🔥‍原盘┃4K‍🔥",
+            "name": "🔥原盘┃4K🔥",
             "type": 3,
             "api": "csp_AiNewZhiNan4KGuard",
             "searchable": 1,
@@ -139,7 +139,7 @@
         },
         {
             "key": "蜗牛",
-            "name": "🔥‍蜗牛┃4K‍🔥",
+            "name": "🔥蜗牛┃4K🔥",
             "type": 3,
             "api": "csp_AiNewWoNiu4KGuard",
             "searchable": 1,
@@ -377,7 +377,7 @@
         },
         {
             "key": "WexAiBoBo",
-            "name": "🔥=伯伯┃秒播🔥",
+            "name": "🔥伯伯┃秒播🔥",
             "type": 3,
             "api": "csp_WexAiBoBoGuard",
             "searchable": 1,
@@ -395,7 +395,7 @@
         },
         {
             "key": "LiveAiHuYa",
-            "name": "🔥‍虎牙┃直播‍🔥",
+            "name": "🔥虎牙┃直播🔥",
             "type": 3,
             "api": "csp_LiveAiHuYaGuard",
             "searchable": 1,
@@ -524,7 +524,7 @@
         },
         {
             "key": "BookHongGuo",
-            "name": "🔥‍小红┃听书🔥",
+            "name": "🔥小红┃听书🔥",
             "type": 3,
             "api": "csp_BookHongGuoGuard",
             "searchable": 1,
@@ -532,7 +532,7 @@
         },
         {
             "key": "BookHeMa",
-            "name": "🔥‍小马┃听书🔥",
+            "name": "🔥小马┃听书🔥",
             "type": 3,
             "api": "csp_BookHeMaGuard",
             "searchable": 1,
@@ -540,7 +540,7 @@
         },
         {
             "key": "BookAiShiJie",
-            "name": "🔥‍极品┃听书🔥",
+            "name": "🔥极品┃听书🔥",
             "type": 3,
             "api": "csp_BookAiShiJieGuard",
             "searchable": 1,
@@ -548,7 +548,7 @@
         },
         {
             "key": "BookAiYueTing",
-            "name": "🔥‍悦庭┃听书🔥",
+            "name": "🔥悦庭┃听书🔥",
             "type": 3,
             "api": "csp_BookAiYueTingGuard",
             "searchable": 1,
@@ -557,7 +557,7 @@
         },
         {
             "key": "BookAi23TingShu",
-            "name": "🔥‍爱上┃听书🔥",
+            "name": "🔥爱上┃听书🔥",
             "type": 3,
             "api": "csp_BookAi23TingShuGuard",
             "searchable": 1,
@@ -736,7 +736,7 @@
         },
         {
             "key": "FakeAi115Share",
-            "name": "🔥115┃分享‍🔥",
+            "name": "🔥115┃分享🔥",
             "type": 3,
             "api": "csp_FakeAi115ShareGuard",
             "searchable": 1,
