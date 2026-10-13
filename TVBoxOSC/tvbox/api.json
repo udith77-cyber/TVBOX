@@ -1,7 +1,7 @@
 {
     "spider": "./spider.jar",
-    "wallpaper": "http://127.0.0.1:9978/proxy?do=wallpaper",
-    "logo": "http://127.0.0.1:9978/file/TVBox/logo.png",
+    "wallpaper": "https://www.loliapi.com/acg/pe/",
+    "logo": "https://raw.githubusercontent.com/udith77-cyber/TVBOX/refs/heads/main/IMG-TVBOX.jpg",
     "danmaku": "http://127.0.0.1:9978/proxy?do=danmaku&name={name}&episode={episode}",
     "sites": [
         {
