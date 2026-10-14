@@ -528,6 +528,11 @@ _RANGE_FETCH_BACKOFF_SECONDS = 0.8
 class HongguoPluginError(RuntimeError):
     pass
 
+
+class _RetryableModelError(HongguoPluginError):
+    """video_model 接口 transient 失败（设备限流 110001 / 空数据 / 网络异常），可换设备标识重试。"""
+    pass
+
 def _text(value: Any) -> str:
     return str(value or "").strip()
 
@@ -3400,7 +3405,15 @@ def _device_config(config: Mapping[str, Any]) -> dict[str, str]:
         "ua": APP_UA,
     }
 
-def _video_model(video_id: str, config: Mapping[str, Any]) -> dict[str, Any]:
+def _fresh_device_ids() -> dict[str, str]:
+    """生成一组新的随机设备标识，用于绕开 video_model 接口的设备级限流。"""
+    return {
+        "device_id": str(random.randint(10**17, 10**18 - 1)),
+        "install_id": str(random.randint(10**17, 10**18 - 1)),
+    }
+
+
+def _video_model_once(video_id: str, config: Mapping[str, Any]) -> dict[str, Any]:
     devices = _device_config(config)
     params = {
         "iid": devices["install_id"],
@@ -3473,8 +3486,12 @@ def _video_model(video_id: str, config: Mapping[str, Any]) -> dict[str, Any]:
     )
     response_data = _json_response(response)
     data = response_data.get("data") or {}
-    if not isinstance(data, Mapping):
-        raise HongguoPluginError("video_model 数据为空")
+    if not isinstance(data, Mapping) or not data:
+        code = response_data.get("Code")
+        # Code 110001 / 空数据：多为同一设备标识短时间内请求过频被限流，换设备标识重试
+        raise _RetryableModelError(
+            "video_model 接口繁忙(code=%s)" % (code if code not in (None, 0) else "empty")
+        )
     entry: Any = data.get(video_id)
     if entry is None:
         for value in data.values():
@@ -3497,6 +3514,35 @@ def _video_model(video_id: str, config: Mapping[str, Any]) -> dict[str, Any]:
     if not isinstance(raw_model, Mapping):
         raise HongguoPluginError("video_model 为空")
     return dict(raw_model)
+
+
+def _video_model(video_id: str, config: Mapping[str, Any]) -> dict[str, Any]:
+    """取播放模型；遇到设备限流 / 空数据 / 网络异常时换设备标识重试。
+
+    实测：同一 device_id 短时间内第 2 次请求会被接口限流（Code 110001），
+    直接导致第 2 集起播放失败。这里最多尝试 3 次，失败后换一组新的随机
+    设备标识再试（cookie 等用户配置会保留）。
+    """
+    cfg = dict(config or {})
+    last_err: Exception | None = None
+    for attempt in range(3):
+        if attempt:
+            cfg = dict(cfg)
+            cfg.update(_fresh_device_ids())
+            try:
+                time.sleep(1.0 * attempt)
+            except Exception:
+                pass
+        try:
+            return _video_model_once(video_id, cfg)
+        except _RetryableModelError as err:
+            last_err = err
+        except requests.RequestException as err:
+            last_err = _RetryableModelError("video_model 网络异常：%s" % err)
+    raise HongguoPluginError(
+        "video_model 为空%s" % ("（%s）" % last_err if last_err else "")
+    )
+
 
 def _video_list_from_model(model: Mapping[str, Any]) -> Any:
     for key in ("video_list", "dynamic_video_list"):
@@ -3753,13 +3799,32 @@ def _filter_group(key, name, values):
     return {"key": key, "name": name, "value": [{"n": n, "v": v} for n, v in values]}
 
 
+def _loader_page(data: Mapping[str, Any], keys: tuple[str, ...], marker: str) -> dict[str, Any]:
+    """按候选路由键取 loaderData 分页数据。
+
+    官网改版后路由键会变（如 category_page -> category_$），优先按候选键取，
+    取不到时扫描 loaderData 中带 marker 字段（如 recommendList / searchList）的项兜底。
+    """
+    loader = data.get("loaderData") if isinstance(data, Mapping) else None
+    if not isinstance(loader, Mapping):
+        return {}
+    for key in keys:
+        page = loader.get(key)
+        if isinstance(page, dict) and page:
+            return page
+    for page in loader.values():
+        if isinstance(page, dict) and page.get(marker):
+            return page
+    return {}
+
+
 def _search_loader(key: str) -> dict:
     """拉取搜索页 loaderData，失败重试。"""
     last = {}
     for attempt in range(3):
         try:
             data = _data(SITE + "/search/" + quote(str(key), safe=""))
-            page = (data.get("loaderData") or {}).get("search_(keyword)/page") or {}
+            page = _loader_page(data, ("search_(keyword)/page",), "searchList")
             if page.get("searchList"):
                 return page
             last = page or last
@@ -3813,7 +3878,8 @@ def _category_loader(page: int, q: dict) -> dict:
     for attempt in range(3):
         try:
             data = _data(SITE + "/category?" + urlencode(q))
-            p = (data.get("loaderData") or {}).get("category_page") or {}
+            # 官网改版：loaderData 路由键由 category_page 变为 category_$，兼容两者
+            p = _loader_page(data, ("category_$", "category_page"), "recommendList")
             rows = p.get("recommendList") or []
             if rows or page > 1:
                 return p
