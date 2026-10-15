@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 橘汁视频 TVBox spider — 华谊同款协议栈移植
+
 import json
 import re
 import sys

@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-# 站点: 金AV / 全网封禁AV (jinav)，MacCMS 架构，模板 template/jinav
-# 特性: 发布页自动解析最新域名（发布入口 → 跳转链 → 拾光驿站导航 JSON → 站点 URL）
-# 结构依据: 用户提供的首页真实 HTML（2026-10-07）
 
 import re
 import json

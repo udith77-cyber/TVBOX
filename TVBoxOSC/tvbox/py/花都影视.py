@@ -1,28 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Author: Muse
-# @Name: 花都影视
-# TVBox Python 爬虫源 — 可直接放进 TVBox 的 py 源目录播放
-# 线路: https://8pbv.huadudm.net (官方发布页「未用CDN」线路，免滑动验证)
-# 主站 huaduys.net 有滑动验证不用。线路失效只改下方 HOST 一处即可。
-# 播放: player_data encrypt=2 -> url 是 escape 编码再把 % 换成 JT，
-#       JT 还原为 % 后再 URL-decode 即 m3u8 直链，免解析
-#
-# 2026-10-14 实测结构:
-#   - 卡片: <a class="stui-vodlist__thumb picture w-thumb img-shadow"
-#           href="/voddetail/数字.html" title="…" style="…" target="_blank">
-#           (属性顺序可能变化，按 class 名识别，不依赖顺序)
-#   - 缩略图: 内层 <img class="lazyload img-shadow" data-original="…">，
-#           src 为占位图 /hdys/img/load.gif
-#   - 标签: <span class="pic-tag pic-tag-b/t/l/r" style="background-color:…;">
-#   - 标题: <h4 class="title text-overflow"><a href="/voddetail/…" title="…">
-#   - 详情信息: <div class="detail-item"><strong class="label-width">名称：</strong>
-#               <span class="detail-content">…
-#   - 播放入口: <a class="btn btn-primary" href="/vodplay/数字-1-1.html">
-#   - 播放列表 ul: <ul class="stui-content__playlist clearfix"> (在播放页)
-#   - 播放页: var player_data={"flag":"play","encrypt":2,…,"url":"JTY4JTc0…",…}
-#   - 列表页: /vodshow/1--------1---.html；偶发返回空页面，需重试
-#   - 搜索第1页: /vodsearch/关键词-------------.html (13 横杠)
-#   - 搜索第N页: /vodsearch/关键词----------N---.html (10 横杠 + 页码 + 3 横杠)
 
 import sys
 import re

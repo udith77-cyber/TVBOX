@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-# QQ群:807916734 @ID丶
-# -*- coding: utf-8 -*-
-# ============================================================
-# TVBox Python 爬虫 · 山有木兮影视 (film.symx.club)
-# 版本: 2.1.3 (熔断器移除+多策略generate版)
-# 兼容: TVBox / 影视仓 / FongMi / WebHomeTV(默影视) / PeekPro
-# 优化: 播放解析重构 / 滑块轨迹增强 / 探测逻辑加固 / 解码器修正 / 缓存分离
-# 协议: /api/* + X-Platform/X-Timestamp/HMAC签名头 + XOR解密system/config
-#       内容接口免登录; 1004 → /api/auth/verify 滑块自愈
-# 零第三方依赖: 滑块识别内置纯 Python JPEG 解码 (PIL 可用时优先)
-# 零 f-string (老内核 Python 兼容)
-# ============================================================
+
 import sys
 sys.path.append('..')
 try:

@@ -1,28 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Author: Muse
-# @Name: 黄色仓库
-# TVBox Python 爬虫源 — 可直接放进 TVBox 的 py 源目录播放
-# 站点: 黄色仓库 https://hsck.net/ (访问会 302 跳转到最新域名，如 https://111.1eck.cc/)
-#
-# 域名经常更换:
-#   - 首次请求时自动跟随 hsck.net 的跳转解析出真实 host 并缓存
-#   - 解析失败用下方 _HOST_FALLBACK 兜底
-#   - 也可用 extend 传 {"host": "https://新域名"} 直接覆盖
-# 播放: 播放页 /v5/{id}-1-1.html 里带 AID/ASID/ANID/AK 四个参数，
-#       POST 到 /static/count.php 换回 {"ok":true,"u":base64(m3u8)}，
-#       解码即 m3u8 直链 (免解析)
-# 注意: 列表里混有站外广告卡，只取 href="/v5/数字-1-1.html" 的真实视频
-#
-# 2026-10-14 实测结构:
-#   - 卡片: <li><div class="stui-vodlist__box">…
-#   - 视频链接: <a class="stui-vodlist__thumb lazyload" href="/v5/数字-1-1.html" data-original="封面">
-#   - 广告卡: <a class="… pa-thumb" href="https://站外…" target="blank">
-#   - 标题: <h4 class="title"><a href="/v5/…">
-#   - 时长: <span class="pic-text text-right">
-#   - 分类分页: /vodtype/1-2.html
-#   - 搜索第1页: /vodsearch/关键词-------------.html (13 横杠)
-#   - 搜索第N页: /vodsearch/关键词----------N---.html (10 横杠 + 页码 + 3 横杠)
-#   - 播放页: var AID='258782', ASID='1', ANID='1', AK='64位hex';
+
 
 import sys
 import re
