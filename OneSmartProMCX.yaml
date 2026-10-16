@@ -122,8 +122,12 @@ dns:
   enhanced-mode: fake-ip                   
   fake-ip-range: 198.18.0.1/16             
   default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
+    - tls://223.5.5.5                  
+    - tls://223.6.6.6                  
+    - tls://dns.alidns.com             
+    - tls://dot.pub                    
+    - tls://1.12.12.12                 
+    - tls://120.53.53.53               
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
