@@ -154,25 +154,61 @@ class Spider(BaseSpider):
             })
         return result
 
+    def _js_unescape(self, s):
+        """等价于 JS unescape()：%uXXXX -> 对应字符，其余 %XX 按 UTF-8 解码。"""
+        if not s:
+            return ''
+        s = re.sub(r'%u([0-9a-fA-F]{4})',
+                   lambda m: chr(int(m.group(1), 16)), s)
+        try:
+            return unquote(s)
+        except Exception:
+            return s
+
     def _decode_play_url(self, raw, enc):
-        """player_data.url 解码。实测 encrypt=2 时是 escape 编码再把 % 换成 JT；
-        兼容 base64 与明文，按候选逐个验证 http(s) 开头。"""
-        cands = []
+        """player_data.url 解码，兼容多种加密形态：
+        - 明文 http(s) / 协议相对 //
+        - escape 编码（encrypt=2），其中 % 被替换成占位符（实测为 JT；
+          若站点更换占位符，会自动探测大写双字母 token）
+        - base64（含链式：base64 解开后仍是 escape 编码，即 encrypt=1 形态）
+        - %uXXXX 形态
+        按候选逐个验证 http(s) 开头，全部失败返回空串。"""
         raw = (raw or '').strip().replace('\\/', '/')
-        if 'JT' in raw:
-            cands.append(unquote(raw.replace('JT', '%')))
+        if not raw:
+            return ''
+        if raw.startswith('//'):
+            return 'https:' + raw
+        if re.match(r'^https?://', raw):
+            return raw
+        # 候选占位符：已知 JT + 自动探测（escape 编码里 % 被整体替换，
+        # 替换回 % 后应能 unescape 出可打印 ASCII）
+        tokens = []
+        for t in ['JT'] + re.findall(r'[A-Z]{2}', raw):
+            if t not in tokens:
+                tokens.append(t)
+        cands = []
+        for t in tokens:
+            if t in raw:
+                cands.append(self._js_unescape(raw.replace(t, '%')))
+        # base64 形态（含链式：base64 解开后仍是 escape 编码）
         s = re.sub(r'[^A-Za-z0-9+/=]', '', raw)
         if len(s) >= 8:
             try:
-                s += '=' * (-len(s) % 4)
-                cands.append(base64.b64decode(s).decode('utf-8', errors='ignore'))
+                b = base64.b64decode(s + '=' * (-len(s) % 4)).decode('utf-8', errors='ignore')
+                if b and b != raw:
+                    cands.append(b)
+                    cands.append(self._js_unescape(b))
+                    for t in tokens:
+                        if t in b:
+                            cands.append(self._js_unescape(b.replace(t, '%')))
             except Exception:
                 pass
-        cands.append(unquote(raw))
+        cands.append(self._js_unescape(raw))
         for c in cands:
-            c = (c or '').strip()
-            if re.match(r'^https?://', c):
-                return c
+            c = re.sub(r'[\x00-\x1f\x7f]+', '', (c or '')).strip()
+            m = re.match(r'^https?://[^\s\'"<>\\]+', c)
+            if m:
+                return m.group(0)
         return ''
 
     # ---------------- TVBox 接口 ----------------
@@ -284,30 +320,50 @@ class Spider(BaseSpider):
 
     def playerContent(self, flag, id, vipFlags):
         play_url = self._abs(id)
+        fallback = {'parse': 1, 'jx': 1, 'playUrl': '', 'url': play_url, 'header': self.header}
         try:
             html = self._fetch(play_url)
-            idx = html.find('player_data')
-            seg = html[idx:idx + 8000] if idx > -1 else html
-            um = re.search(r'"url"\s*:\s*"([^"]*)"', seg)
-            if not um or not um.group(1):
-                return {'parse': 1, 'jx': 1, 'playUrl': '', 'url': play_url, 'header': self.header}
-            em = re.search(r'"encrypt"\s*:\s*(\d+)', seg)
+            if self._is_blocked(html):
+                # 命中滑动验证时页面里根本没有 player_data，直接走兜底
+                return fallback
+            # 收集页面里所有 "url" 候选：优先 player_data 附近的片段，再扫全页；
+            # 兼容单/双引号与转义引号，逐个尝试解码（页面里可能先出现广告等空 url）
+            segs = []
+            for pm in re.finditer(r'player_data', html):
+                segs.append(html[pm.start():pm.start() + 8000])
+            segs.append(html)
+            raws = []
+            for seg in segs:
+                for um in re.finditer(r'"url"\s*:\s*"((?:[^"\\]|\\.)*)"', seg):
+                    v = um.group(1)
+                    try:
+                        v = json.loads('"' + v + '"')
+                    except Exception:
+                        pass
+                    if v and v not in raws:
+                        raws.append(v)
+                for um in re.finditer(r"'url'\s*:\s*'((?:[^'\\]|\\.)*)'", seg):
+                    v = um.group(1)
+                    if v and v not in raws:
+                        raws.append(v)
+            em = re.search(r'"encrypt"\s*:\s*"?(\d+)', html)
             enc = em.group(1) if em else '0'
-            direct = self._decode_play_url(um.group(1), enc)
-            if direct:
-                return {
-                    'parse': 0,
-                    'jx': 0,
-                    'playUrl': '',
-                    'url': direct,
-                    'header': {
-                        'User-Agent': self.ua,
-                        'Referer': self.host + '/',
-                    },
-                }
-            return {'parse': 1, 'jx': 1, 'playUrl': '', 'url': play_url, 'header': self.header}
+            for raw in raws:
+                direct = self._decode_play_url(raw, enc)
+                if direct:
+                    return {
+                        'parse': 0,
+                        'jx': 0,
+                        'playUrl': '',
+                        'url': direct,
+                        'header': {
+                            'User-Agent': self.ua,
+                            'Referer': play_url,
+                        },
+                    }
+            return fallback
         except Exception:
-            return {'parse': 1, 'jx': 1, 'playUrl': '', 'url': play_url, 'header': self.header}
+            return fallback
 
     def localProxy(self, param):
         return None
