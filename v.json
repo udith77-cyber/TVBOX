@@ -30,7 +30,7 @@
       {
         "tag": "dns_resolver",
         "type": "udp",
-        "server": "1.1.1.1",
+        "server": "119.29.29.29",
         "server_port": 53
       }
     ],
@@ -88,650 +88,6 @@
     {
       "type": "block",
       "tag": "REJECT"
-    },
-    {
-      "type": "vless",
-      "tag": "shopify.com",
-      "server": "shopify.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "time.is",
-      "server": "time.is",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "icook.hk",
-      "server": "icook.hk",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "icook.tw",
-      "server": "icook.tw",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "ip.sb",
-      "server": "ip.sb",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "japan.com",
-      "server": "japan.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "malaysia.com",
-      "server": "malaysia.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "russia.com",
-      "server": "russia.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "singapore.com",
-      "server": "singapore.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "skk.moe",
-      "server": "skk.moe",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.visa.com",
-      "server": "www.visa.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.visa.com.sg",
-      "server": "www.visa.com.sg",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.visa.com.hk",
-      "server": "www.visa.com.hk",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.visa.com.tw",
-      "server": "www.visa.com.tw",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.visa.co.jp",
-      "server": "www.visa.co.jp",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.visakorea.com",
-      "server": "www.visakorea.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.gco.gov.qa",
-      "server": "www.gco.gov.qa",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.gov.se",
-      "server": "www.gov.se",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.gov.ua",
-      "server": "www.gov.ua",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.digitalocean.com",
-      "server": "www.digitalocean.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.csgo.com",
-      "server": "www.csgo.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.shopify.com",
-      "server": "www.shopify.com",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
-    },
-    {
-      "type": "vless",
-      "tag": "www.whoer.net",
-      "server": "www.whoer.net",
-      "server_port": 443,
-      "uuid": "2ed3daab-bf42-44c6-8dff-3c50eff5f138",
-      "transport": {
-        "path": "/admin/Aries/?ed=2560&https://dns.alidns.com/dns-query&https://sm2.doh.pub/dns-query",
-        "type": "ws",
-        "headers": {
-          "Host": "worldinterconnectioncenter.pages.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "worldinterconnectioncenter.pages.dev",
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "tcp_fast_open": false,
-      "domain_resolver": "dns_resolver"
     },
     {
       "type": "vless",
@@ -1044,7 +400,7 @@
       "type": "urltest",
       "tag": "🇭🇰 香港节点",
       "outbounds": [
-        "DIRECT"
+        "vless"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m",
@@ -1054,7 +410,7 @@
       "type": "urltest",
       "tag": "🇯🇵 日本节点",
       "outbounds": [
-        "DIRECT"
+        "vless"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m",
@@ -1064,7 +420,7 @@
       "type": "urltest",
       "tag": "🇺🇲 美国节点",
       "outbounds": [
-        "DIRECT"
+        "vless"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m",
@@ -1074,7 +430,7 @@
       "type": "urltest",
       "tag": "🇨🇳 台湾节点",
       "outbounds": [
-        "DIRECT"
+        "vless"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m",
@@ -1084,7 +440,7 @@
       "type": "urltest",
       "tag": "🇸🇬 狮城节点",
       "outbounds": [
-        "DIRECT"
+        "vless"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m",
@@ -1094,7 +450,7 @@
       "type": "urltest",
       "tag": "🇰🇷 韩国节点",
       "outbounds": [
-        "DIRECT"
+        "vless"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m",
@@ -1104,7 +460,7 @@
       "type": "selector",
       "tag": "🎥 奈飞节点",
       "outbounds": [
-        "DIRECT"
+        "vless"
       ]
     },
     {
@@ -1165,7 +521,6 @@
           "169.254.0.0/16",
           "172.16.0.0/12",
           "192.168.0.0/16",
-          "198.18.0.0/16",
           "224.0.0.0/4"
         ],
         "domain": [
